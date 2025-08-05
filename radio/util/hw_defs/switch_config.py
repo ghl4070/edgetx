@@ -286,6 +286,21 @@ SWITCH_CONFIG = {
         "SM": {"default": "2POS"},
         "SN": {"default": "2POS"},
     },
+        "petx": {
+        # left side
+        "SA": {"default": "3POS",   "display": [0, 0]},
+        "SC": {"default": "TOGGLE", "display": [0, 1]},
+        # right side
+        "SB": {"default": "3POS",   "display": [1, 0]},
+        "SD": {"default": "TOGGLE", "display": [1, 1]},
+        # custom switches
+        "SG": {"default": "2POS"},
+        "SH": {"default": "2POS"},
+        "SI": {"default": "2POS"},
+        "SJ": {"default": "2POS"},
+        "SK": {"default": "2POS"},
+        "SL": {"default": "2POS"},
+    },
     "tpros": {
         # left side
         "SA": {"default": "3POS",   "display": [0, 0]},
