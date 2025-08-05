@@ -36,10 +36,51 @@ __weak void keysInit()
 
 __weak uint32_t readKeys()
 {
+  #if defined(RADIO_PETX)
+  {
+     if ((_read_trims() & 0x01) || (_read_trims() & 0x02))
+        return 0;
+    else  
+         return _read_keys();
+  }
+  #else
   return _read_keys();
+ #endif
 }
 
 __weak uint32_t readTrims()
 {
-  return _read_trims();
+  uint32_t trims = _read_trims();
+#if defined(RADIO_PETX)
+  {
+    trims &= 0xF00;
+    if (_read_trims() == 0x03)
+     {
+        trims |= 0x42;//返回BOOTLOADER_KEYS
+     }
+    else if (_read_trims() & 0x01)
+     {
+      if (_read_keys() & (1 << KEY_LEFT))
+         trims |= 0x01;
+      if (_read_keys() & (1 << KEY_RIGHT))
+         trims |= 0x02;
+      if (_read_keys() & (1 << KEY_DOWN))
+         trims |= 0x04;
+      if (_read_keys() & (1 << KEY_UP))
+         trims |= 0x08;       
+     }
+   else if (_read_trims() & 0x02)
+    {
+      if (_read_keys() & (1 << KEY_LEFT))
+         trims |= 0x40;
+      if (_read_keys() & (1 << KEY_RIGHT))
+         trims |= 0x80;
+      if (_read_keys() & (1 << KEY_DOWN))
+         trims |= 0x10;
+      if (_read_keys() & (1 << KEY_UP))
+         trims |= 0x20;       
+    }
+  }
+#endif
+  return trims;
 }
