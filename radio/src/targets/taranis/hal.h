@@ -2345,7 +2345,7 @@
   #define INTMODULE_TIMER_DMA_STREAM_IRQn  DMA2_Stream5_IRQn
   #define INTMODULE_TIMER_DMA_IRQHandler   DMA2_Stream5_IRQHandler
   #define INTMODULE_TIMER_FREQ             (PERI2_FREQUENCY * TIMER_MULT_APB2)
-#elif (defined(RADIO_FAMILY_JUMPER_T12) && defined(HARDWARE_INTERNAL_MODULE)) || defined(RADIO_TX12) || defined(RADIO_T8) || defined(RADIO_TPRO) || defined(RADIO_TPROV2)|| defined(RADIO_T20)
+#elif (defined(RADIO_FAMILY_JUMPER_T12) && defined(HARDWARE_INTERNAL_MODULE)) || defined(RADIO_TX12) || defined(RADIO_T8) || defined(RADIO_TPRO) || defined(RADIO_TPROV2)|| defined(RADIO_T20)|| defined(RADIO_PETX)
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOC, 6)  // PC.06
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 10) // PB.10
   #define INTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 11) // PB.11
