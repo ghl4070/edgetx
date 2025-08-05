@@ -77,6 +77,19 @@
   #define KEYS_GPIO_PIN_EXIT            LL_GPIO_PIN_2  // PD.02
   #define KEYS_GPIO_REG_ENTER           GPIOA
   #define KEYS_GPIO_PIN_ENTER           LL_GPIO_PIN_13 // PA.13
+#elif defined(RADIO_PETX)
+  #define KEYS_GPIO_REG_EXIT            GPIOD
+  #define KEYS_GPIO_PIN_EXIT            LL_GPIO_PIN_2  // PD.02
+  #define KEYS_GPIO_REG_ENTER           GPIOE
+  #define KEYS_GPIO_PIN_ENTER           LL_GPIO_PIN_10 // PE.10
+  #define KEYS_GPIO_REG_UP              GPIOE
+  #define KEYS_GPIO_PIN_UP              LL_GPIO_PIN_9 // PE.09
+  #define KEYS_GPIO_REG_DOWN            GPIOE
+  #define KEYS_GPIO_PIN_DOWN            LL_GPIO_PIN_11 // PE.11
+  #define KEYS_GPIO_REG_LEFT            GPIOD
+  #define KEYS_GPIO_PIN_LEFT            LL_GPIO_PIN_7 // PD.07
+  #define KEYS_GPIO_REG_RIGHT           GPIOD
+  #define KEYS_GPIO_PIN_RIGHT           LL_GPIO_PIN_3 // PD.03
 #elif defined(RADIO_FAMILY_JUMPER_T12) && !defined(RADIO_TPRO) && !defined(RADIO_TPROV2)
   #define KEYS_GPIO_REG_EXIT            GPIOD
   #define KEYS_GPIO_PIN_EXIT            LL_GPIO_PIN_2  // PD.02
