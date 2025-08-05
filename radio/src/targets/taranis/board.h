@@ -133,7 +133,7 @@ extern HardwareOptions hardwareOptions;
   #define BATTERY_WARN                  66 // 6.6V
   #define BATTERY_MIN                   67 // 6.7V
   #define BATTERY_MAX                   83 // 8.3V
-#elif defined(RADIO_T8) || defined(RADIO_TLITE) || defined(RADIO_LR3PRO)
+#elif defined(RADIO_T8) || defined(RADIO_TLITE) || defined(RADIO_LR3PRO) || defined(RADIO_PETX) 
   // 1S Li-ion /  Lipo, LDO for 3.3V
   #define BATTERY_WARN                  35 // 3.5V
   #define BATTERY_MIN                   34 // 3.4V
