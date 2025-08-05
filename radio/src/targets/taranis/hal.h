@@ -1656,7 +1656,7 @@
   #define STICK_PWM_CHANNEL_LV          0
   #define STICK_PWM_CHANNEL_RV          2
   #define STICK_PWM_CHANNEL_RH          3
-#elif defined(RADIO_TLITE) || defined(RADIO_LR3PRO)
+#elif defined(RADIO_TLITE) || defined(RADIO_LR3PRO) || defined(RADIO_PETX)
   #define ADC_GPIO_PIN_STICK_RV         LL_GPIO_PIN_0  // PA.00
   #define ADC_GPIO_PIN_STICK_RH         LL_GPIO_PIN_1  // PA.01
   #define ADC_GPIO_PIN_STICK_LV         LL_GPIO_PIN_2  // PA.02
@@ -2069,6 +2069,12 @@
   #define GPIO_LED_GPIO_OFF             gpio_clear
   #define LED_BLUE_GPIO                 GPIO_PIN(GPIOB, 1) // PB.01
   #define LED_RED_GPIO                  GPIO_PIN(GPIOC, 4) // PC.04
+#elif defined(RADIO_PETX)
+  #define STATUS_LEDS
+  #define GPIO_LED_GPIO_ON              gpio_set
+  #define GPIO_LED_GPIO_OFF             gpio_clear
+  #define LED_RED_GPIO                  GPIO_PIN(GPIOC, 5)  //
+  #define LED_BLUE_GPIO                 GPIO_PIN(GPIOC, 4)  // 
 #elif defined(RADIO_T8)
   #define STATUS_LEDS
   #define GPIO_LED_GPIO_ON              gpio_set
@@ -2208,6 +2214,16 @@
   #define FSLED_GPIO_PIN_4              GPIO_PIN(FSLED_GPIO, 10)
   #define FSLED_GPIO_PIN_5              GPIO_PIN(FSLED_GPIO, 9)
   #define FSLED_GPIO_PIN_6              GPIO_PIN(FSLED_GPIO, 8)
+#elif defined(RADIO_PETX)
+  #define GPIO_FSLED_GPIO_ON            GPIO_SetBits
+  #define GPIO_FSLED_GPIO_OFF           GPIO_ResetBits
+  #define FSLED_GPIO                    GPIOB
+  #define FSLED_GPIO_PIN_1              GPIO_PIN(FSLED_GPIO, 1)
+  #define FSLED_GPIO_PIN_2              GPIO_PIN(FSLED_GPIO, 2)
+  #define FSLED_GPIO_PIN_3              GPIO_PIN(FSLED_GPIO, 3)
+  #define FSLED_GPIO_PIN_4              GPIO_PIN(FSLED_GPIO, 4)
+  #define FSLED_GPIO_PIN_5              GPIO_PIN(FSLED_GPIO, 5)
+  #define FSLED_GPIO_PIN_6              GPIO_PIN(FSLED_GPIO, 9) 
 #elif defined(RADIO_FAMILY_T20)
   #define GPIO_FSLED_GPIO_ON            GPIO_SetBits
   #define GPIO_FSLED_GPIO_OFF           GPIO_ResetBits
