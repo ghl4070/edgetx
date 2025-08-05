@@ -2450,6 +2450,35 @@
         gpio_clear(EXTMODULE_PWR_GPIO);       \
         gpio_clear(EXTMODULE_RF_SWITCH_GPIO); \
       } while (0)
+  #elif defined(RADIO_PETX)
+    #define EXTMODULE_PWR_GPIO          GPIO_PIN(GPIOD, 8) // PD.08
+    #define EXTERNAL_MODULE_PWR_ON()      gpio_set(EXTMODULE_PWR_GPIO)
+    #define EXTERNAL_MODULE_PWR_OFF()     gpio_clear(EXTMODULE_PWR_GPIO)
+    #define IS_EXTERNAL_MODULE_ON()       gpio_read(EXTMODULE_PWR_GPIO)
+    #define EXTMODULE_TX_GPIO             GPIO_PIN(GPIOB, 6) // PB.06
+    #define EXTMODULE_RX_GPIO             GPIO_PIN(GPIOB, 7) // PB.07
+  
+    #define EXTMODULE_TIMER               TIM4
+    #define EXTMODULE_TIMER_Channel       LL_TIM_CHANNEL_CH1
+    #define EXTMODULE_TIMER_FREQ          (PERI2_FREQUENCY * TIMER_MULT_APB1)
+    #define EXTMODULE_TIMER_IRQn          TIM4_IRQn
+    #define EXTMODULE_TIMER_IRQHandler    TIM4_IRQHandler
+    #define EXTMODULE_TIMER_TX_GPIO_AF    LL_GPIO_AF_2 // TIM4_CH1
+    #define EXTMODULE_TIMER_DMA_CHANNEL           LL_DMA_CHANNEL_7
+    #define EXTMODULE_TIMER_DMA                   DMA2
+    #define EXTMODULE_TIMER_DMA_STREAM            LL_DMA_STREAM_2
+    #define EXTMODULE_TIMER_DMA_STREAM_IRQn       DMA2_Stream2_IRQn
+    #define EXTMODULE_TIMER_DMA_IRQHandler        DMA2_Stream2_IRQHandler
+
+    #define EXTMODULE_USART                       USART1
+    #define EXTMODULE_USART_IRQn                  USART1_IRQn
+    #define EXTMODULE_USART_IRQHandler            USART1_IRQHandler
+    #define EXTMODULE_USART_TX_DMA                DMA2
+    #define EXTMODULE_USART_TX_DMA_CHANNEL        LL_DMA_CHANNEL_4
+    #define EXTMODULE_USART_TX_DMA_STREAM         LL_DMA_STREAM_7
+    #define EXTMODULE_USART_RX_DMA_CHANNEL        LL_DMA_CHANNEL_4
+    #define EXTMODULE_USART_RX_DMA_STREAM         LL_DMA_STREAM_2
+  
   #elif defined(RADIO_FAMILY_T20) || defined(RADIO_BUMBLEBEE)
     #define EXTMODULE_PWR_GPIO                    GPIO_PIN(GPIOB, 1) // PB.01
     #define EXTERNAL_MODULE_PWR_ON()              gpio_set(EXTMODULE_PWR_GPIO)
