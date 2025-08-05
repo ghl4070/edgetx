@@ -51,7 +51,7 @@
 #elif defined(PCBST16)
  #include "yaml_datastructs_st16.cpp"
 #elif defined(PCBX7)
- #if defined(RADIO_TPRO) || defined(RADIO_TPROV2) || defined(RADIO_BUMBLEBEE)
+ #if defined(RADIO_TPRO) || defined(RADIO_TPROV2) || defined(RADIO_BUMBLEBEE) || defined(RADIO_PETX)
   #include "yaml_datastructs_tpro.cpp"
  #elif defined(RADIO_FAMILY_T20)
   #include "yaml_datastructs_t20.cpp"
