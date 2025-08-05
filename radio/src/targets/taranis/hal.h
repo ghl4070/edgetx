@@ -394,6 +394,23 @@
   #define TRIMS_GPIO_PIN_LVD            LL_GPIO_PIN_1  // PB.01
   #define TRIMS_VIRTUAL_RV
   #define TRIMS_VIRTUAL_RH
+#elif defined(RADIO_PETX)
+  #define TRIMS_GPIO_REG_LHL            GPIOD
+  #define TRIMS_GPIO_PIN_LHL            LL_GPIO_PIN_15 // PD.15
+  #define TRIMS_GPIO_REG_LHR            GPIOC
+  #define TRIMS_GPIO_PIN_LHR            LL_GPIO_PIN_1  // PC.01
+  #define TRIMS_GPIO_REG_LVD            GPIOE
+  #define TRIMS_GPIO_PIN_LVD            LL_GPIO_PIN_6  // PE.06
+  #define TRIMS_GPIO_REG_LVU            GPIOE
+  #define TRIMS_GPIO_PIN_LVU            LL_GPIO_PIN_5  // PE.05
+  #define TRIMS_GPIO_REG_RVD            GPIOC
+  #define TRIMS_GPIO_PIN_RVD            LL_GPIO_PIN_3  // PC.03
+  #define TRIMS_GPIO_REG_RHL            GPIOE
+  #define TRIMS_GPIO_PIN_RHL            LL_GPIO_PIN_3  // PE.03
+  #define TRIMS_GPIO_REG_RVU            GPIOC
+  #define TRIMS_GPIO_PIN_RVU            LL_GPIO_PIN_2  // PC.02
+  #define TRIMS_GPIO_REG_RHR            GPIOE
+  #define TRIMS_GPIO_PIN_RHR            LL_GPIO_PIN_4  // PE.04
 #elif defined(RADIO_X7ACCESS)
   #define TRIMS_GPIO_REG_LHR            GPIOD
   #define TRIMS_GPIO_PIN_LHR            LL_GPIO_PIN_15 // PD.15
